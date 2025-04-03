@@ -28,8 +28,8 @@
   </gazebo>
 
   <!-- RGBD Camera -->
-  <gazebo reference="camera">
-    <sensor type="depth" name="camera">
+  <gazebo reference="camera_link">
+    <sensor type="depth" name="camera_1">
       <always_on>1</always_on>
       <update_rate>20.0</update_rate>
       <visualize>true</visualize>

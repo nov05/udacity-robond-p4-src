@@ -133,7 +133,7 @@
   </joint>
 
   <!-- Camera link -->
-  <link name="camera">
+  <link name="camera_link">
     <origin xyz="0 0 0" rpy="0 0 0" />
     <inertial>
       <mass value="1e-5" />
@@ -158,19 +158,19 @@
   <!-- Camera joint -->
   <joint name="camera_joint" type="fixed">
     <parent link="chassis" />
-    <child link="camera" />
+    <child link="camera_link" />
     <origin xyz="0.2 0 0" rpy="0 0 0" />
     <axis xyz="0 1 0" />
   </joint>
 
   <!-- RBGD Camera link -->
-  <link name="camera_optical">
+  <link name="camera_optical_link">
   </link>
   <!-- RBGD Camera joint -->
   <joint name="camera_optical_joint" type="fixed">
     <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707" />
-    <parent link="camera" />
-    <child link="camera_optical" />
+    <parent link="camera_link" />
+    <child link="camera_optical_link" />
   </joint>
   
   <!-- Hokuyo LiDAR link -->
