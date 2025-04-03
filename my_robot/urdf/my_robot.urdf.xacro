@@ -173,7 +173,6 @@
     <child link="camera_link_optical" />
   </joint>
 
-
   <!-- Hokuyo LiDAR link -->
   <link name="hokuyo">
     <origin xyz="0 0 0" rpy="0 0 0" />
