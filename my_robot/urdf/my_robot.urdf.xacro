@@ -163,7 +163,7 @@
     <axis xyz="0 1 0" />
   </joint>
 
-  <!-- RBGD Camera -->
+  <!-- RBGD Camera link -->
   <link name="camera_link_optical">
   </link>
   <!-- RBGD Camera joint -->
