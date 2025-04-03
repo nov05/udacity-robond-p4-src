@@ -158,7 +158,7 @@
   <!-- Camera joint -->
   <joint name="camera_joint" type="fixed">
     <parent link="chassis" />
-    <child link="camera_link" />
+    <child link="camera" />
     <origin xyz="0.2 0 0" rpy="0 0 0" />
     <axis xyz="0 1 0" />
   </joint>
