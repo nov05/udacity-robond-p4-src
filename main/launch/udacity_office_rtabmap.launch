@@ -101,8 +101,8 @@
                 Mem/SaveDepth16Format to true to keep using ".rvl" format and images will be converted
                 to 16bits for convenience (warning: that would remove all depth values over 65 meters).
                 Explicitly set Mem/DepthCompressionFormat=".png" to suppress this warning. -->
-            <param name="Mem/SaveDepth16Format" type="string" value="true" />
-            <param name="Mem/DepthCompressionFormat" type="string" value=".png" />
+            <param name="Mem/SaveDepth16Format" type="string" value="false" />
+            <param name="Mem/DepthCompressionFormat" type="string" value=".rvl" />
         </node>
     </group>
 
