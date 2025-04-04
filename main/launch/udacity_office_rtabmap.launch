@@ -6,6 +6,16 @@
     <!-- $ roslaunch main udacity_office.launch -->
     <include file="$(find my_robot)/launch/udacity_office.launch"></include>
 
+    <!-- Arguments for launch file with defaults provided -->
+    <!-- located at ~/.ros/rtabmap.db -->
+    <arg name="database_path" default="rtabmap.db" />
+    <arg name="rgb_topic" default="/camera/rgb/image_raw" />
+    <arg name="depth_topic" default="/camera/depth/image_raw" />
+    <arg name="camera_info_topic" default="/camera/rgb/camera_info" />
+    <!-- Choose visualization -->
+    <arg name="rviz" default="true" />
+    <arg name="rtabmap_viz" default="false" />
+
     <node pkg="nodelet" type="nodelet" name="points_xyzrgb"
         args="standalone rtabmap_util/point_cloud_xyzrgb">
         <remap from="rgb/image" to="$(arg rgb_topic)" />
@@ -28,16 +38,6 @@
     <!--           See "delete_db_on_start" option below... -->
     <!-- Refer to
         https://github.com/introlab/rtabmap_ros/blob/master/rtabmap_demos/launch/demo_robot_mapping.launch -->
-
-    <!-- Arguments for launch file with defaults provided -->
-    <!-- located at ~/.ros/rtabmap.db -->
-    <arg name="database_path" default="rtabmap.db" />
-    <arg name="rgb_topic" default="/camera/rgb/image_raw" />
-    <arg name="depth_topic" default="/camera/depth/image_raw" />
-    <arg name="camera_info_topic" default="/camera/rgb/camera_info" />
-    <!-- Choose visualization -->
-    <arg name="rviz" default="true" />
-    <arg name="rtabmap_viz" default="false" />
 
     <!-- Mapping Node -->
     <group ns="rtabmap">
