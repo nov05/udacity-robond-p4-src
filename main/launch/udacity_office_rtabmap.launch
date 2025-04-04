@@ -8,9 +8,12 @@
 
     <node pkg="nodelet" type="nodelet" name="points_xyzrgb"
         args="standalone rtabmap_util/point_cloud_xyzrgb">
-        <remap from="rgb/image" to="/data_throttled_image" />
+        <remap from="rgb/image" to="$(arg rgb_topic)" />
+        <remap from="depth/image" to="$(arg depth_topic)" />
+        <remap from="rgb/camera_info" to="$(arg camera_info_topic)" />
+        <!-- <remap from="rgb/image" to="/data_throttled_image" />
         <remap from="depth/image" to="/data_throttled_image_depth" />
-        <remap from="rgb/camera_info" to="/data_throttled_camera_info" />
+        <remap from="rgb/camera_info" to="/data_throttled_camera_info" /> -->
         <remap from="cloud" to="voxel_cloud" />
 
         <param name="rgb/image_transport" type="string" value="compressed" />
@@ -61,12 +64,12 @@
 
             <!-- RTAB-Map Inputs -->
             <remap from="scan" to="/scan" />
-            <!-- <remap from="rgb/image" to="$(arg rgb_topic)" />
+            <remap from="rgb/image" to="$(arg rgb_topic)" />
             <remap from="depth/image" to="$(arg depth_topic)" />
-            <remap from="rgb/camera_info" to="$(arg camera_info_topic)" /> -->
-            <remap from="rgb/image" to="/data_throttled_image" />
+            <remap from="rgb/camera_info" to="$(arg camera_info_topic)" />
+            <!-- <remap from="rgb/image" to="/data_throttled_image" />
             <remap from="depth/image" to="/data_throttled_image_depth" />
-            <remap from="rgb/camera_info" to="/data_throttled_camera_info" />
+            <remap from="rgb/camera_info" to="/data_throttled_camera_info" /> -->
             <param name="rgb/image_transport" type="string" value="compressed" />
             <param name="depth/image_transport" type="string" value="compressedDepth" />
 
