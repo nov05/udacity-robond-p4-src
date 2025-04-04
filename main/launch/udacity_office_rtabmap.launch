@@ -6,6 +6,12 @@
     <!-- $ roslaunch main udacity_office.launch -->
     <include file="$(find my_robot)/launch/udacity_office.launch"></include>
 
+    <!-- ROBOT MAPPING VERSION: use this with ROS bag demo_mapping.bag -->
+    <!-- WARNING : Database is automatically deleted on each startup -->
+    <!--           See "delete_db_on_start" option below... -->
+    <!-- Refer to
+        https://github.com/introlab/rtabmap_ros/blob/master/rtabmap_demos/launch/demo_robot_mapping.launch -->
+
     <!-- Arguments for launch file with defaults provided -->
     <!-- located at ~/.ros/rtabmap.db -->
     <arg name="database_path" default="rtabmap.db" />
@@ -15,30 +21,7 @@
     <!-- Choose visualization -->
     <arg name="rviz" default="true" />
     <arg name="rtabmap_viz" default="false" />
-
-    <node pkg="nodelet" type="nodelet" name="points_xyzrgb"
-        args="standalone rtabmap_util/point_cloud_xyzrgb">
-        <remap from="rgb/image" to="$(arg rgb_topic)" />
-        <remap from="depth/image" to="$(arg depth_topic)" />
-        <remap from="rgb/camera_info" to="$(arg camera_info_topic)" />
-        <!-- <remap from="rgb/image" to="/data_throttled_image" />
-        <remap from="depth/image" to="/data_throttled_image_depth" />
-        <remap from="rgb/camera_info" to="/data_throttled_camera_info" /> -->
-        <remap from="cloud" to="voxel_cloud" />
-
-        <param name="rgb/image_transport" type="string" value="compressed" />
-        <param name="depth/image_transport" type="string" value="compressedDepth" />
-
-        <param name="queue_size" type="int" value="10" />
-        <param name="voxel_size" type="double" value="0.01" />
-    </node>
-
-    <!-- ROBOT MAPPING VERSION: use this with ROS bag demo_mapping.bag -->
-    <!-- WARNING : Database is automatically deleted on each startup -->
-    <!--           See "delete_db_on_start" option below... -->
-    <!-- Refer to
-        https://github.com/introlab/rtabmap_ros/blob/master/rtabmap_demos/launch/demo_robot_mapping.launch -->
-
+    
     <!-- Mapping Node -->
     <group ns="rtabmap">
         <!-- Check the new names of the packages at http://wiki.ros.org/rtabmap_ros -->
