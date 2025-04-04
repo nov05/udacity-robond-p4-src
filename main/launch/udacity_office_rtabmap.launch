@@ -68,7 +68,7 @@
             <!-- Loop Closure Detection -->
             <!-- 0=SURF 1=SIFT 2=ORB 3=FAST/FREAK 4=FAST/BRIEF 5=GFTT/FREAK 6=GFTT/BRIEF 7=BRISK
                  8=GFTT/ORB 9=KAZE -->
-            <param name="Kp/DetectorStrategy" type="string" value="0" />
+            <param name="Kp/DetectorStrategy" type="string" value="0" /> <!-- OpenCV is required -->
             <!-- <param name="Kp/DetectorStrategy" type="string" value="8" /> --> <!-- lightweight -->
 
             <!-- Maximum visual words per image (bag-of-words) -->
