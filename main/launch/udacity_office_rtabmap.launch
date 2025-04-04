@@ -85,6 +85,23 @@
 
             <!-- Set to false to avoid saving data when robot is not moving -->
             <param name="Mem/NotLinkedNodesKept" type="string" value="false" />
+
+            <!-- Added by nov05 -->
+            <!-- Setting "Grid/Sensor" parameter to 0 (default 1) as "subscribe_scan",
+                "subscribe_scan_cloud" or "gen_scan" is true. The occupancy grid map will be constructed
+            from laser scans. -->
+            <param name="Grid/Sensor" type="string" value="0" />
+            <!-- Mem/UseOdomFeatures is enabled, but Vis/FeatureType and Kp/DetectorStrategy
+                parameters are not the same! Disabling Mem/UseOdomFeatures... -->
+            <param name="Mem/UseOdomFeatures" type="string" value="false" />
+            <!-- Mem/SaveDepth16Format is set to false to use 32bits format but this is not
+                compatible with the compressed depth format chosen (Mem/DepthCompressionFormat=".rvl"),
+                depth images will be compressed in ".png" format instead. Explicitly set
+                Mem/SaveDepth16Format to true to keep using ".rvl" format and images will be converted
+                to 16bits for convenience (warning: that would remove all depth values over 65 meters).
+                Explicitly set Mem/DepthCompressionFormat=".png" to suppress this warning. -->
+            <param name="Mem/SaveDepth16Format" type="string" value="true" />
+            <param name="Mem/DepthCompressionFormat" type="string" value=".rvl" />
         </node>
     </group>
 
