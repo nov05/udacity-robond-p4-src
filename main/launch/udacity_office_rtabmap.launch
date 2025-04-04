@@ -102,7 +102,7 @@
                 to 16bits for convenience (warning: that would remove all depth values over 65 meters).
                 Explicitly set Mem/DepthCompressionFormat=".png" to suppress this warning. -->
             <param name="Mem/SaveDepth16Format" type="string" value="false" />
-            <param name="Mem/DepthCompressionFormat" type="string" value=".rvl" />
+            <param name="Mem/DepthCompressionFormat" type="string" value=".png" />
         </node>
     </group>
 
