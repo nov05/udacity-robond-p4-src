@@ -30,10 +30,10 @@
 
             <!-- Basic RTAB-Map Parameters -->
             <param name="database_path" type="string" value="$(arg database_path)" />
-            <!-- <param name="wait_for_transform" type="bool" value="true" /> -->
             <!-- <param name="frame_id" type="string" value="base_footprint" /> -->
             <param name="frame_id" type="string" value="base_link" />
             <param name="odom_frame_id" type="string" value="odom" />
+            <param name="wait_for_transform" type="bool" value="true" />
             <param name="subscribe_depth" type="bool" value="true" />
             <param name="subscribe_scan" type="bool" value="true" />
             <param name="rtabmap_viz" type="bool" value="$(arg rtabmap_viz)" />
@@ -46,18 +46,18 @@
             <param name="odom_tf_angular_variance" type="double" value="0.001" />
 
             <!-- RTAB-Map Inputs -->
-            <remap from="scan" to="scan" />
+            <remap from="scan" to="/scan" />
             <remap from="rgb/image" to="$(arg rgb_topic)" />
             <remap from="depth/image" to="$(arg depth_topic)" />
             <remap from="rgb/camera_info" to="$(arg camera_info_topic)" />
             <!-- <remap from="rgb/image" to="/data_throttled_image" />
             <remap from="depth/image" to="/data_throttled_image_depth" />
             <remap from="rgb/camera_info" to="/data_throttled_camera_info" /> -->
-            <param name="rgb/image_transport" type="string" value="compressed" />
-            <param name="depth/image_transport" type="string" value="compressedDepth" />
+            <!-- <param name="rgb/image_transport" type="string" value="compressed" />
+            <param name="depth/image_transport" type="string" value="compressedDepth" /> -->
 
             <!-- RTAB-Map Output -->
-            <remap from="grid_map" to="map" />
+            <remap from="grid_map" to="/map" />
 
             <!-- Rate (Hz) at which new nodes are added to map -->
             <param name="Rtabmap/DetectionRate" type="string" value="1" />
