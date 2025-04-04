@@ -27,6 +27,13 @@
         <node name="rtabmap" pkg="rtabmap_slam" type="rtabmap" output="screen"
             args="--delete_db_on_start">
 
+            <!-- added by nov05 -->
+            <!-- As /az3/base_controller/odom topic doesn't provide covariances, we use TF to get
+                odom and we fix the covariance -->
+            <param name="odom_frame_id" type="string" value="odom" />
+            <param name="odom_tf_linear_variance" type="double" value="0.001" />
+            <param name="odom_tf_angular_variance" type="double" value="0.001" />
+
             <!-- Basic RTAB-Map Parameters -->
             <param name="database_path" type="string" value="$(arg database_path)" />
             <!-- <param name="frame_id" type="string" value="base_footprint" /> -->
@@ -42,6 +49,12 @@
             <remap from="rgb/image" to="$(arg rgb_topic)" />
             <remap from="depth/image" to="$(arg depth_topic)" />
             <remap from="rgb/camera_info" to="$(arg camera_info_topic)" />
+
+            <!-- <remap from="rgb/image" to="/data_throttled_image" />
+            <remap from="depth/image" to="/data_throttled_image_depth" />
+            <remap from="rgb/camera_info" to="/data_throttled_camera_info" />
+            <param name="rgb/image_transport" type="string" value="compressed" />
+            <param name="depth/image_transport" type="string" value="compressedDepth" /> -->
 
             <!-- RTAB-Map Output -->
             <remap from="grid_map" to="/map" />
