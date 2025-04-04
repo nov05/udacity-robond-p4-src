@@ -15,6 +15,7 @@
     <include file="$(find my_robot)/launch/udacity_office.launch"></include>
 
     <!-- Arguments for launch file with defaults provided -->
+    <!-- located at ~/.ros/rtabmap.db -->
     <arg name="database_path" default="rtabmap.db" />
     <arg name="rgb_topic" default="/camera/rgb/image_raw" />
     <arg name="depth_topic" default="/camera/depth/image_raw" />
@@ -22,7 +23,7 @@
 
     <!-- Mapping Node -->
     <group ns="rtabmap">
-        <!-- Check the new package names at http://wiki.ros.org/rtabmap_ros -->
+        <!-- Check the new names of the packages at http://wiki.ros.org/rtabmap_ros -->
         <node name="rtabmap" pkg="rtabmap_slam" type="rtabmap" output="screen"
             args="--delete_db_on_start">
 
