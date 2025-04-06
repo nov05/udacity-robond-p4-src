@@ -96,8 +96,8 @@ IF(NOT WIN32)
     src/OrbitOrientedViewController.cpp
   )
 ENDIF(NOT WIN32)
-#set(eigen3_DIR "/usr/local/share/eigen3/cmake")  ## nov05
-find_package(Eigen3 REQUIRED NO_MODULE) ## nov05
+set(eigen3_DIR "/usr/local/share/eigen3")  ## added by nov05
+find_package(eigen3 REQUIRED NO_MODULE)    ## added by nov05
 add_library(rtabmap_rviz_plugins
    ${SRC_FILES}
 )
