@@ -46,6 +46,8 @@
             <param name="odom_tf_angular_variance" type="double" value="0.001" />
 
             <!-- RTAB-Map Inputs -->
+            <!-- DEBUG: temporarily disable the laser scan -->
+            <param name="subscribe_scan" type="bool" value="false" />
             <remap from="scan" to="/scan" />
             <remap from="rgb/image" to="$(arg rgb_topic)" />
             <remap from="depth/image" to="$(arg depth_topic)" />
