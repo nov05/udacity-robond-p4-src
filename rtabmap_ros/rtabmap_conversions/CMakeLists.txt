@@ -43,6 +43,7 @@ SET(rtabmap_conversions_lib_src
 ############################
 ## Declare a cpp library
 ############################
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)  ## added by nov05
 add_library(rtabmap_conversions
    ${rtabmap_conversions_lib_src}
 )

@@ -96,18 +96,7 @@ IF(NOT WIN32)
     src/OrbitOrientedViewController.cpp
   )
 ENDIF(NOT WIN32)
-#set(EIGEN3_INCLUDE_DIRS "/usr/include/eigen3")                                ## added by nov05
-#list(APPEND CMAKE_PREFIX_PATH "/usr/local/share/eigen3/cmake")                ## added by nov05
-#set(CMAKE_PREFIX_PATH "/usr/local/share/eigen3/cmake")                          ## added by nov05
-find_package(Eigen3 3.3.9 REQUIRED NO_MODULE)                                       ## added by nov05
-#message(STATUS "✅ Found Eigen3: EIGEN3_INCLUDE_DIRS = '${EIGEN3_INCLUDE_DIRS}'") ## added by nov05
-#message(STATUS "✅ Found Eigen3: EIGEN3_DEFINITIONS = '${EIGEN3_DEFINITIONS}'")   ## added by nov05
-#message(STATUS "✅ Found Eigen3: EIGEN3_LIBRARIES = '${EIGEN3_LIBRARIES}'")       ## added by nov05
-#include_directories(${EIGEN3_INCLUDE_DIRS})                                       ## added by nov05
-#add_definitions(${EIGEN3_DEFINITIONS})                                            ## added by nov05
-#message(STATUS "⚠️  SRC_FILES = ${SRC_FILES}")                                   ## added by nov05 
-#message(STATUS "⚠️  Libraries = ${Libraries}")                                   ## added by nov05
-#message(FATAL_ERROR "🔴 Stopping before add_library for debugging purposes.")   ## added by nov05
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)  ## added by nov05
 add_library(rtabmap_rviz_plugins
    ${SRC_FILES}
 )
