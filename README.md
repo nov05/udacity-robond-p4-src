@@ -23,13 +23,18 @@ for ws in ~/catkin_ws ~/catkin_ws2 ~/catkin_ws3; do
 done
 export PKG_CONFIG_PATH=$(echo "$_PKG_CONFIG_PATH" | tr ':' '\n' | tac | awk '!seen[$0]++' | tac | paste -sd ':' -):/usr/lib/x86_64-linux-gnu/pkgconfig
 unset _PKG_CONFIG_PATH
-echo $PKG_CONFIG_PATH
+echo "\$PKG_CONFIG_PATH=$PKG_CONFIG_PATH"
+
+export ROS_PACKAGE_PATH=/home/robond/catkin_ws3/src:/home/robond/catkin_ws2/src:/home/robond/catkin_ws/src:/opt/ros/noetic/share
+echo "\$ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH"
 
 export PATH=/usr/local/cuda-12.2/bin:$PATH
 export CUDADIR=/usr/local/cuda-12.2
 export CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-12.2
 export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64:$LD_LIBRARY_PATH
+
 export TURTLEBOT3_MODEL=burger_for_autorace
+echo "\$TURTLEBOT3_MODEL=$TURTLEBOT3_MODEL"
 ##################################################################################
 ```
 
