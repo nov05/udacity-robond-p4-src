@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(rtabmap_demos)
 
+find_package(OpenCV 4.11 REQUIRED)  ## added by nov05
+
 find_package(catkin REQUIRED COMPONENTS
               rtabmap_conversions rtabmap_msgs visualization_msgs
 )
