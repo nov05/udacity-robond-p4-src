@@ -9,8 +9,13 @@
     <!-- ROBOT MAPPING VERSION: use this with ROS bag demo_mapping.bag -->
     <!-- WARNING : Database is automatically deleted on each startup -->
     <!--           See "delete_db_on_start" option below... -->
-    <!-- Refer to
-        https://github.com/introlab/rtabmap_ros/blob/master/rtabmap_demos/launch/demo_robot_mapping.launch -->
+    <!-- 
+        Refer to
+        http://wiki.ros.org/rtabmap_ros
+        http://wiki.ros.org/rtabmap_slam
+        https://github.com/introlab/rtabmap/blob/master/corelib/include/rtabmap/core/Parameters.h#L161
+        https://github.com/introlab/rtabmap_ros/blob/master/rtabmap_demos/launch/demo_robot_mapping.launch 
+     -->
 
     <!-- Arguments for launch file with defaults provided -->
     <!-- located at ~/.ros/rtabmap.db -->
@@ -28,7 +33,7 @@
         <node name="rtabmap" pkg="rtabmap_slam" type="rtabmap" output="screen"
             args="--delete_db_on_start">
             <!-- DEBUG: temporarily disable some functions -->
-            <!-- <param name="subscribe_scan" type="bool" value="false" /> -->
+            <param name="subscribe_scan" type="bool" value="false" />
             <!-- <param name="Rtabmap/LoopClosure" type="string" value="false" /> -->
             <!-- <param name="Gpu/Enabled" value="false" /> -->
 
@@ -39,7 +44,7 @@
             <param name="odom_frame_id" type="string" value="odom" />
             <param name="wait_for_transform" type="bool" value="true" />
             <param name="subscribe_depth" type="bool" value="true" />
-            <param name="subscribe_scan" type="bool" value="true" />
+            <!-- <param name="subscribe_scan" type="bool" value="true" /> -->
             <param name="rtabmap_viz" type="bool" value="$(arg rtabmap_viz)" />
             <param name="rviz" type="bool" value="$(arg rviz)" />
 

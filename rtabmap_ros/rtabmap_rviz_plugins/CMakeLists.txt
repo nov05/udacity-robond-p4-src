@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(rtabmap_rviz_plugins)
 
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)  ## added by nov05
+
 # For rviz plugins, look for Qt5 before Qt4
 FIND_PACKAGE(Qt5 COMPONENTS Widgets Core Gui QUIET)
 IF(NOT Qt5_FOUND)
@@ -96,7 +98,6 @@ IF(NOT WIN32)
     src/OrbitOrientedViewController.cpp
   )
 ENDIF(NOT WIN32)
-find_package(Eigen3 3.3 REQUIRED NO_MODULE)  ## added by nov05
 add_library(rtabmap_rviz_plugins
    ${SRC_FILES}
 )

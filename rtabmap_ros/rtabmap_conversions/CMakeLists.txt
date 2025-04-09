@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(rtabmap_conversions)
 
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)  ## added by nov05
+
 find_package(catkin REQUIRED COMPONENTS
              cv_bridge roscpp sensor_msgs std_msgs geometry_msgs
              tf tf_conversions eigen_conversions laser_geometry pcl_conversions 
@@ -43,7 +45,6 @@ SET(rtabmap_conversions_lib_src
 ############################
 ## Declare a cpp library
 ############################
-find_package(Eigen3 3.3 REQUIRED NO_MODULE)  ## added by nov05
 add_library(rtabmap_conversions
    ${rtabmap_conversions_lib_src}
 )
