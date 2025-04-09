@@ -44,7 +44,7 @@
             <param name="odom_frame_id" type="string" value="odom" />
             <param name="wait_for_transform" type="bool" value="true" />
             <param name="subscribe_depth" type="bool" value="true" />
-            <!-- <param name="subscribe_scan" type="bool" value="true" /> -->
+            <param name="subscribe_scan" type="bool" value="true" />
             <param name="rtabmap_viz" type="bool" value="$(arg rtabmap_viz)" />
             <param name="rviz" type="bool" value="$(arg rviz)" />
 
