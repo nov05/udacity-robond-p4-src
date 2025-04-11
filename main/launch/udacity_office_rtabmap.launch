@@ -33,7 +33,6 @@
         <node name="rtabmap" pkg="rtabmap_slam" type="rtabmap" output="screen"
             args="--delete_db_on_start">
             <!-- DEBUG: temporarily disable some functions -->
-            <!-- <param name="subscribe_scan" type="bool" value="false" /> -->
             <!-- <param name="Rtabmap/LoopClosure" type="string" value="false" /> -->
             <!-- <param name="Gpu/Enabled" value="false" /> -->
 
